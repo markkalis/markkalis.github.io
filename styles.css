@@ -1,0 +1,106 @@
+html {
+  background: #292630;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  font-family: 'Stalemate', cursive;
+  font-family: 'Dr Sugiyama', cursive;
+  font-family: 'Arizonia', cursive;
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 500%;
+  left: 50%;
+  margin-left: -2em;
+  margin-top: -1em;
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+}
+
+body > nav {
+  background: black;
+  bottom: 0;
+  font-family: Arial, Helvetica, Tahoma, sans-serif;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+body > nav ul {
+  list-style-type: none;
+}
+
+body > nav a {
+  color: white;
+  text-decoration: none;
+}
+
+section {
+  display: none;
+}
+
+
+
+/* Sections */
+
+.artwork {
+  display: block;
+}
+
+.artwork div {
+  height: 100%;
+  left: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.artwork div img {
+  zoom: 2;
+}
+
+.artwork nav ol {
+  display: none;
+  font-size: 400%;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  margin-top: -1em;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 90;
+}
+
+.artwork nav ol li {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.artwork nav ol li a {
+  color: gainsboro;
+  font-family: 'Stalemate', cursive;
+  font-family: 'Dr Sugiyama', cursive;
+  font-family: 'Arizonia', cursive;
+  font-family: 'Dawning of a New Day', cursive;
+  padding: .5em .25em;
+  text-decoration: none;
+}
+
+.artwork nav ol a:hover {
+  background: transparent;
+  color: white;
+}
+
+.artwork nav ol li:first-child {left: 0;}
+.artwork nav ol li:last-child {right: 0;}
+
+.js .artwork nav ol {
+  display: block;
+}
