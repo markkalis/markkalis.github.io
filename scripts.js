@@ -40,16 +40,21 @@ $("html")
     }
 
     active
-      .animate({left: out + "%"}, slide.bind(null, {left: -out + "%"}, {left: "0"}));
+      .animate({left: out + "%"}, fade);
+      // .animate({left: out + "%"}, slide.bind(null, {left: -out + "%"}, {left: "0"}));
   }
 
-  $.each([
-    "red",
-    "green",
-    "blue"
-    ], function (indx, item) {
-      this.append($("<div>").addClass(item));
-    }.bind($artwork));
+  [
+    "img/DSC_0271.png",
+    "img/DSC_0416.png",
+    "img/watching-Katrina.png"
+    ].forEach(function (item) {
+      $("<img />")
+        .attr("src", item)
+        .wrap("<div>")
+        .parent()
+        .appendTo($artwork);
+    });
 
   active = $artwork
     .children("div")

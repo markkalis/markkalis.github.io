@@ -52,15 +52,16 @@ section {
 .artwork div {
   height: 100%;
   left: 100%;
+  overflow: hidden;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 1;
 }
 
-.artwork .red {background: red;}
-.artwork .green {background: green;}
-.artwork .blue {background: blue;}
+.artwork div img {
+  zoom: 2;
+}
 
 .artwork nav ol {
   display: none;
