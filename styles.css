@@ -127,7 +127,7 @@ section {
   position: absolute;
   top: 50%;
   width: 100%;
-  z-index: 90;
+  z-index: 40;
 }
 
 .artwork nav ol li {
