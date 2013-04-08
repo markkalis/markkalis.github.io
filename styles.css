@@ -1,5 +1,6 @@
 html {
   background: #292630;
+  font-family: Arial, Helvetica, Tahoma, sans-serif;
   overflow: hidden;
 }
 
@@ -14,27 +15,52 @@ h1 {
   margin-left: -2em;
   margin-top: -1em;
   position: absolute;
+  text-shadow: 0.04em 0.04em 0.1em #333;
   top: 50%;
-  z-index: 100;
+  z-index: 20;
 }
 
 body > nav {
   background: black;
+  background: rgba(0, 0, 0, 0.6);
   bottom: 0;
+  color: white;
   font-family: Arial, Helvetica, Tahoma, sans-serif;
   left: 0;
+  overflow: hidden;
   position: absolute;
   width: 100%;
+  -moz-transition:    background-color 1s;
+  -webkit-transition: background-color 1s;
+  -o-transition:      background-color 1s;
+  transition:         background-color 1s;
   z-index: 100;
+}
+
+body > nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+  -moz-transition:    background-color 1s;
+  -webkit-transition: background-color 1s;
+  -o-transition:      background-color 1s;
+  transition:         background-color 1s;
 }
 
 body > nav ul {
   list-style-type: none;
 }
 
+body > nav ul li {
+  display: inline-block;
+}
+
 body > nav a {
-  color: white;
+  color: inherit;
+  padding: 1em 2em;
   text-decoration: none;
+}
+
+body > nav a:hover {
+  text-decoration: underline;
 }
 
 section {
@@ -44,6 +70,31 @@ section {
 
 
 /* Sections */
+
+.info {
+  background: white;
+  border: 2em solid gainsboro;
+  border-top: 0;
+  border-bottom: 0;
+  height: 100%;
+  left: 50%;
+  margin-left: -18em;
+  overflow: scroll;
+  position: absolute;
+  top: 0;
+  width: 34em;
+  z-index: 80;
+}
+
+.info article {
+  display: none;
+  padding: 2em;
+  padding-bottom: 4em;
+}
+
+.info article:target {
+  display: block;
+}
 
 .artwork {
   display: block;
@@ -60,12 +111,14 @@ section {
 }
 
 .artwork div img {
+  height: auto;
+  width: 100%;
   zoom: 2;
 }
 
 .artwork nav ol {
   display: none;
-  font-size: 400%;
+  font-size: 300%;
   left: 0;
   list-style-type: none;
   margin: 0;
@@ -78,24 +131,33 @@ section {
 }
 
 .artwork nav ol li {
-  margin: 0;
-  padding: 0;
+  display: inline-block;
   position: absolute;
 }
 
 .artwork nav ol li a {
+  background: transparent;
+  background: rgba(255, 255, 255, 0.3);
+  -moz-border-radius: 60px;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
   color: gainsboro;
-  font-family: 'Stalemate', cursive;
-  font-family: 'Dr Sugiyama', cursive;
-  font-family: 'Arizonia', cursive;
-  font-family: 'Dawning of a New Day', cursive;
-  padding: .5em .25em;
+  padding: .1em .5em .3em;
   text-decoration: none;
+  text-shadow: 0.04em 0.04em 0.1em #333;
+  -moz-transition:    background-color 1s;
+  -webkit-transition: background-color 1s;
+  -o-transition:      background-color 1s;
+  transition:         background-color 1s;
 }
 
 .artwork nav ol a:hover {
   background: transparent;
   color: white;
+  -moz-transition:    background-color 1s;
+  -webkit-transition: background-color 1s;
+  -o-transition:      background-color 1s;
+  transition:         background-color 1s;
 }
 
 .artwork nav ol li:first-child {left: 0;}

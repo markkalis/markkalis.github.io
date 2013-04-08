@@ -1,5 +1,6 @@
 /*jshint laxcomma:true*/
 
+var $doc = $(document);
 
 $("html")
   .addClass("js")
@@ -61,6 +62,67 @@ $("html")
     .first()
     .css({left: "0"});
 
-  $(document)
+  $doc
     .on("click", ".js-arrows a", arrowEvent);
+}(jQuery));
+
+/* Menu and Info showing
+  */
+(function ($) {
+  var menu
+    , nav
+    , sections;
+
+  nav = $("body > nav");
+
+  menu = $("<ul>")
+    .appendTo(nav);
+
+  sections = $("section")
+    .children("article")
+    .map(function (indx, item) {
+      var link, text;
+
+      text = $(item)
+        .children("h2")
+        .first()
+        .text();
+
+      link = $("<a>")
+        .attr("href", "#" + item.id)
+        .text(text);
+
+      return $("<li>")
+        .append(link)[0];
+    })
+    .appendTo(menu);
+
+  nav
+    .on("click", "a", function (event) {
+      event.stopPropagation();
+      $(".info").show();
+    });
+
+  $doc
+    .on("click", function (event) {
+      var chain;
+
+      chain = $(event.target)
+        .parents()
+        .andSelf()
+        .filter(".info");
+
+      if (!chain.length) {
+        $doc.trigger("close-info");
+      }
+    })
+    .on("close-info", function (event) {
+      window.location.hash = "home";
+      $(".info").hide();
+    })
+    .on("keyup", function (event) {
+      if (event.keyCode === 27) {
+        $doc.trigger("close-info");
+      }
+    });
 }(jQuery));
