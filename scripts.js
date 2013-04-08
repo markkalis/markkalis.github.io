@@ -70,15 +70,14 @@ $("html")
   */
 (function ($) {
   var menu
-    , nav
-    , sections;
+    , nav;
 
   nav = $("body > nav");
 
   menu = $("<ul>")
     .appendTo(nav);
 
-  sections = $("section")
+  $("section")
     .children("article")
     .map(function (indx, item) {
       var link, text;
@@ -102,6 +101,12 @@ $("html")
       event.stopPropagation();
       $(".info").show();
     });
+
+  $.fn.ready(function () {
+    if (nav.find('[href="' + window.location.hash + '"]').length) {
+      $(".info").show();
+    }
+  });
 
   $doc
     .on("click", function (event) {
