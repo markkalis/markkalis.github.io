@@ -46,9 +46,10 @@ $("html")
   }
 
   [
-    "img/DSC_0271.png",
+    "img/jacks-girl.png",
+    "img/watching-Katrina.png",
     "img/DSC_0416.png",
-    "img/watching-Katrina.png"
+    "img/DSC_0271.png"
     ].forEach(function (item) {
       $("<img />")
         .attr("src", item)
@@ -103,7 +104,9 @@ $("html")
     });
 
   $.fn.ready(function () {
-    if (nav.find('[href="' + window.location.hash + '"]').length) {
+    var link = nav.find('[href="' + window.location.hash + '"]');
+
+    if (link.length) {
       $(".info").show();
     }
   });
